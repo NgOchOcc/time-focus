@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Focus Timer</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <div class="timer-card">
+            <h1 class="app-title">Focus Timer</h1>
+
+            <div class="timer-icon">
+                <div class="pixel-hourglass">
+                    <div class="hourglass-frame">
+                        <div class="frame-top"></div>
+                        <div class="glass-top">
+                            <div class="sand-top"></div>
+                        </div>
+                        <div class="glass-middle">
+                            <div class="sand-particle"></div>
+                            <div class="sand-particle"></div>
+                            <div class="sand-particle"></div>
+                            <div class="sand-particle"></div>
+                            <div class="sand-particle"></div>
+                        </div>
+                        <div class="glass-bottom">
+                            <div class="sand-bottom"></div>
+                        </div>
+                        <div class="frame-bottom"></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="timer-display">
+                <span id="minutes">25</span>:<span id="seconds">00</span>
+            </div>
+
+            <div class="custom-time">
+                <label for="customMinutes">Custom Time (minutes):</label>
+                <input type="number" id="customMinutes" min="1" max="180" placeholder="Enter minutes">
+                <button id="setCustomBtn" class="btn btn-custom">Set</button>
+            </div>
+
+            <div class="session-info">
+                <span id="session-type">Focus Session</span>
+            </div>
+
+            <div class="controls">
+                <button id="startBtn" class="btn btn-primary">Start</button>
+                <button id="pauseBtn" class="btn btn-secondary" disabled>Pause</button>
+                <button id="resetBtn" class="btn btn-secondary">Reset</button>
+            </div>
+
+            <div class="presets">
+                <h3>Quick Presets</h3>
+                <div class="preset-buttons">
+                    <button class="preset-btn" data-minutes="15">15 min</button>
+                    <button class="preset-btn active" data-minutes="25">25 min</button>
+                    <button class="preset-btn" data-minutes="45">45 min</button>
+                    <button class="preset-btn" data-minutes="60">60 min</button>
+                </div>
+            </div>
+
+            <div class="stats">
+                <div class="stat-item">
+                    <span class="stat-label">Sessions Today</span>
+                    <span class="stat-value" id="sessionsCount">0</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-label">Total Focus Time</span>
+                    <span class="stat-value" id="totalTime">0 min</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <audio id="completeSound" preload="auto">
+        <source src="data:audio/wav;base64,UklGRnoGAABXQVZFZm10IBAAAAABAAEAQB8AAEAfAAABAAgAZGF0YQoGAACBhYqFbF1fdJivrJBhNjVgodDbq2EcBj+a2/LDciUFLIHO8tiJNwgZaLvt559NEAxQp+PwtmMcBjiR1/LMeSwFJHfH8N2QQAoUXrTp66hVFApGn+DyvmwhBji" type="audio/wav">
+    </audio>
+
+    <script src="script.js"></script>
+</body>
+</html>
